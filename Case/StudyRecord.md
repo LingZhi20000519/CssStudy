@@ -316,7 +316,6 @@ background-position用水平和垂直两个方向的值来固定。
 
 # 20.清除浮动
 
-
 ### 一、为什么要清除浮动
 
 **经过浮动的元素，会影响到下面的元素的排版布局，浮动元素的父元素没有将浮动元素包裹着。**
@@ -331,7 +330,6 @@ background-position用水平和垂直两个方向的值来固定。
 
 一个元素的高度一般情况下不是手动设置的，是由其自身的内容来撑高的。
 
-
 **2.使用清除浮动的样式属性 clear**
 
 **clear** **是专用于来清除浮动 clear 有三个值 clear:left; 清除左浮动 clear:r ight; 清除右浮动 clear:both; 两者都清除**
@@ -339,7 +337,6 @@ background-position用水平和垂直两个方向的值来固定。
 **clear** **一般是用在最后一个浮动元素的下面**
 
 **在最后一个浮动元素的下面新建一个空白的 div ，里面不放置内容，只用作清除浮动。**
-
 
 **3.使用 overflow:hidden 这个属性来清除浮动**
 
@@ -362,7 +359,6 @@ background-position用水平和垂直两个方向的值来固定。
 3使用属性overflow:hidden
 
 # 21.盒子模型
-
 
 ### 一、盒子简介
 
@@ -412,7 +408,6 @@ background-position用水平和垂直两个方向的值来固定。
 
 # 22.Padding
 
-
 ### Padding
 
 **内容介绍**
@@ -453,7 +448,6 @@ background-position用水平和垂直两个方向的值来固定。
 
 **Padding：10px 20px 30px 40px；表示上为10像素，左为20像素，右为30像素，下为40像素**
 
-
 ## 个人觉得重要的地方
 
 padding的简写属性方向时上右下左
@@ -467,7 +461,6 @@ padding的简写属性方向时上右下左
 四个表示 上 右 下 左
 
 # 23.Margin
-
 
 **内容介绍**
 
@@ -507,7 +500,6 @@ padding的简写属性方向时上右下左
 
 ## 个人觉得重要的地方
 
-
 Margin的简写属性方向时上右下左，和Padding相似
 
 一个时表示所有方位
@@ -517,3 +509,159 @@ Margin的简写属性方向时上右下左，和Padding相似
 三个表示上 左右 下
 
 四个表示 上 右 下 左
+
+# 24.margin塌陷
+
+### margin 塌陷现象
+
+---
+
+**什么是 margin 的塌陷现象**
+
+**1、在标准的文档流中竖直方向的 margin 值不会叠加它会取较大的值.**
+
+**2** **、横着方向是没有 margin 的塌陷现象.**
+
+## 要点
+
+margin在竖直方向取较大值，在水平方向叠加。
+
+# 25.margin居中
+
+### 一、内容简介
+
+**Margin** **的值可以是 auto，当左外边距与右外边距的值都是 auto 时，那么这个盒子就会水平居中**
+
+**Margin** **用法：**
+
+`<span class="lake-fontsize-1515">Margin-left</span>``<span class="lake-fontsize-1515">：auto；/*左外边距*/</span>`
+
+`<span class="lake-fontsize-1515">Margin-right</span>``<span class="lake-fontsize-1515">：auto；/*右外边距*/</span>`
+
+`<span class="lake-fontsize-1515">Margin-top</span>``<span class="lake-fontsize-1515">：100px；/*上外边距100像素*/</span>`
+
+`<span class="lake-fontsize-1515">Margin-bottom</span>``<span class="lake-fontsize-1515">：100px；/*下外边距100像素*/</span>`
+
+---
+
+### 二、属性用法
+
+**Margin-bottom：100px auto；**
+
+---
+
+### 三、注意点
+
+**1. 使用 margin 来实现水平居中时，一定要有固定的宽度（给这个盒子设置一个宽度）只有块元素可以实现水平居中，行内元素不能实现居中**
+
+**/*如果这个元素没有设置固定的宽度，那么这个元素就会占据其父元素的100%宽度*/**
+
+**2.**只有标准文档流中的盒子才可以使用 margin 来实现水平居中
+
+**比如：**`<span class="lake-fontsize-1515">float：left；/*像左浮动*/</span>`（这个用上 margin 就不可能居中）
+
+**3.margin** **属性是用来实现盒子的水平居中，而不是文本的水平居中**
+
+**相反属性：**
+
+**text-align** **这个属性是用于实现文本的水平居中，值为 center 表示文本水平居中，不能实现盒子水平居中**
+
+`<span class="lake-fontsize-1515">text-align</span>``<span class="lake-fontsize-1515">：center；/*只能实现文本水平居中*/</span>`
+
+`<span class="lake-fontsize-1515">margin</span>``<span class="lake-fontsize-1515">：20px auto；/*只能实现元素的水平居中*/</span>`
+
+## 要点
+
+只有标准文档流才能margin水平居中。float的浮动元素不行。
+
+# 26.使用父元素的padding而不是子元素的margin
+
+**margin** **属性本意用于来描述兄弟与兄弟元素之间的关系不是用于描述父子元素之间的关系。**
+
+**描述父子元素的关系最好使用给其父元素设置 padding 属性**
+
+
+# 27.Border
+
+**内容介绍**
+
+**一、**Border **简介**
+
+**二、范例**
+
+一、Border 简介
+
+**border:** **它是“边框”的意思**
+
+**边框有三个要素:粗细、线型、颜色,**
+
+**语法格式:**
+
+**border:** **粗细线型颜色;**
+
+---
+
+**说明：边框的颜色可以省略不写 但是如果不写的话就表式边框的颜色为黑色 其他的两个属性值不能不写 如果不写的话就不会显示边框**
+
+**其实边框也是有四个方法的:**
+
+**border-top:** **上边框**
+
+**border-right:** **右边框。**
+
+**border-bottom:** **下边框**
+
+**border-left:** **左边框。**
+
+## 要点
+
+border
+
+方向
+
+然后粗细，线形，颜色
+
+# 28 display属性
+
+
+### 一、 内容简介
+
+**它是“显示”的意思，用来进行行内元素与块级元素之间的相互转换！将隐藏的元素显示或者将显示的元素进行隐藏。**
+
+**Display** **属性取值：inline (行内)、block (块级)、none (无)**
+
+---
+
+### 二、  知识点
+
+**将一个行内元素的 display 属性值设置为 block 后，这个元素就会被转换为块级元素**
+
+`<span class="lake-fontsize-1515">Display: block</span>``<span class="lake-fontsize-1515">；</span>`
+
+`<span class="lake-fontsize-1515">/*</span>``<span class="lake-fontsize-1515">使用 display 属性，行内元素转换为块级元素*/</span>`
+
+`<span class="lake-fontsize-1515">margin-bottom: 20px</span>``<span class="lake-fontsize-1515">；</span>`
+
+`<span class="lake-fontsize-1515">将一个块级元素的 display 属性设置 为 inline，这个元素就会从块级元素转换为行内元素</span>`
+
+`<span class="lake-fontsize-1515">Display: inline</span>``<span class="lake-fontsize-1515">；</span>`
+
+`<span class="lake-fontsize-1515">/*display<span> </span></span>``<span class="lake-fontsize-1515">属性,块级元素转换为行内元素*/</span>`
+
+**将一个显示的元素隐藏,将一个隐藏的元素显示**
+
+**display: none (**将一个显示的元素进行隐藏)
+
+**display: block (**将一个隐藏的元素进行显示)
+
+**这两个功能是 java Script 使用**
+
+**注意点：**
+
+**将行内元素转换成块级元素，这个元素就会拥有块级元素的特点**
+
+**将块级元素转换成行内元素，这个元素就会拥有行内元素的特点**
+
+## 要点
+
+display:block 变成块级元素，display:span 变成行内元素
