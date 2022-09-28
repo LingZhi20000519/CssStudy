@@ -580,7 +580,6 @@ margin在竖直方向取较大值，在水平方向叠加。
 
 **描述父子元素的关系最好使用给其父元素设置 padding 属性**
 
-
 # 27.Border
 
 **内容介绍**
@@ -623,7 +622,6 @@ border
 
 # 28 display属性
 
-
 ### 一、 内容简介
 
 **它是“显示”的意思，用来进行行内元素与块级元素之间的相互转换！将隐藏的元素显示或者将显示的元素进行隐藏。**
@@ -665,3 +663,484 @@ border
 ## 要点
 
 display:block 变成块级元素，display:span 变成行内元素
+
+# 29定位
+
+### 固定定位
+
+一、Position 简介
+
+**position** **在英文中表示“位置”的意思它主要是用于实现对玩元素的定位,在 CSS 中定位分为三种:**
+
+**position:fixed 固定定位**
+
+**position:relative 相对定位,**
+
+**position:absolute 绝对定位**
+
+**注意:**
+
+**在使用定位属性时,一定要配合定位的坐标来使用!。**
+
+**left:** **表示定位的元素离左边多远**
+
+**right:** **表示定位的元素离右边多远。**
+
+**top:** **表示定位的元素离上边多远。**
+
+**bottom: 表示定位的元素离下边多远**
+
+**语法:v**
+
+**position:fixed**
+
+**固定定位，它是相对于浏览器窗口来进行定位。不管页面如何滚动，固定定位元素显示的位置不会改变!v**
+
+**特点:**
+
+**l  **固定定位元素它脱离了标准文档流
+
+**l  **固定定位元素的的层级比标准文档流里面的元素要高所以固定定位元素它会压盖住标准文档流里面的元素
+
+**l  **固定定位元素它不再占用空间。
+
+**l  **固定定位元素它显示的位置不会随着浏览器滚动而滚动
+
+### 相对定位
+
+**相对定位相当于“自己”来定位；**
+
+**语法：position: relative;            **
+
+**特点：**
+
+**1.相对定位元素它没有脱离标准文档流**
+
+**2.相对定位元素没有设置定位坐标，那么相对定位元素还在原来位置**
+
+**3.相对定位元素设置了定位坐标，就会在原位置留下一个空白元素**
+
+**4.相对定位元素会将标准文档流中的元素压盖住**
+
+**5.相对定位元素的定位值可以为负数**
+
+**/*设置定位坐标***/
+
+**Lift: 100px;**
+
+**注意：**
+
+**/*相对定位属性***/Position: relative;
+
+**相对定位元素一般很少单独使用，主要是用来配合“绝对定位”元素来使用**
+
+### 绝对定位
+
+absolute
+
+**什么是绝对定位?**
+
+**绝对定位元素是相对于“祖先定位元素”来进行定位!**
+
+**什么是祖先定位元素?**
+
+**绝对定位元素它会先去查找其父元素是否设置了定位的属性，如果有设置定位的属性那么它就会相对于其父元素来进行定位;但是如果它的父元素没有设置定位属性，那么它就会去查找其父元素的上一级元素是否设置了定位的属性,如果有设置就相对于其父元素的上一级元素进行定位，但是如果没有设置，那么会继续往向一级进行查找，如果其祖先元素都没有设置定位属性，那么它会相对于“浏览器窗口”来进行定位!**
+
+## 要点
+
+固定定位和绝对定位脱离的标准文档流，相对定位没有。
+
+定位时：子绝父相。子元素绝对定位，父元素相对定位是比较常用的。
+
+固定定位：在窗口不动
+
+相对定位：相对原来的自己
+
+绝对定位：相对父元素
+
+# 30z-index  属性
+
+内容介绍
+
+**一、z-index**
+
+**Ø  **z-index 表示谁压盖着谁，数值大的会压盖住数值小的
+
+**Ø  **只有定位的元素才有 **z-index** **值 只有设置了固定定位、相对定位、绝对定位了的元素它们才会拥有** **z-index**
+
+**Ø  **z-index 的值是没有单位的**,**值是一个正整数**,**默认的 **z-index** **的值是**0
+
+**Ø  **如果定位元素没有设置 **z-index** **属性或者** **z-index** **值设置一样**,**那么写在 HTML 后面的定位前面的定位元素**
+
+**.**divi **与**都设置了绝对定位**,**所以它们就拥有了 **z-index** **属性**,**但是并没有给其设置** **z-index** **属性。没有设置** **z-index** **属性那么它们的值就为**0
+
+**我们要观察** **HTML** **中的结构** **.div1** **这个元素它写在** **.div2** **的后面然后就能知道** **.div1** **这个元素就会压盖住 .div2**
+
+# 31结构伪类
+
+---
+
+**内容介绍**
+
+**一、css3 与  css2 之间的区别**
+
+**二、结构伪类**
+
+**三、使用 css3 中的结构伪类选择器来实现隔行变色的表格**
+
+---
+
+### 一、css3与css2之间的区别
+
+**css3=css2** **新退法+新的属性**
+
+**是对 css2 进行扩充 删减 优化**
+
+---
+
+### 二、结构伪类
+
+**选择器                    功能**
+
+**1.E:first-child        ** **匹配第一个孩子**
+
+**2.E;last-child          **匹配最后一个孩子
+
+**3.E:nth-child(n)        **匹配第n个孩子
+
+**4.E:nth-child(2n)或     匹配偶数的孩子**
+
+**E:nth-child(even)**
+
+**5.** **E:nth-child(2n+1)    ** **匹配奇数的孩子**
+
+**E;nth-child(odd)**
+
+**6.E:only-childo        ** **匹配有且只有一个孩子**
+
+ **1** **.E:first-child  ****匹配第一个孩子**
+
+`<span class="lake-fontsize-1515"><title></span>``<span class="lake-fontsize-1515">结构伪类</title></span>`
+
+`<span class="lake-fontsize-1515"><style type="text/css"></span>`
+
+`<span class="lake-fontsize-1515">/*</span>``<span class="lake-fontsize-1515">使用 CSS3中的结构伪类选择器来匹配元素*/</span>`
+
+`<span class="lake-fontsize-1515">/*</span>``<span class="lake-fontsize-1515">匹配第一个孩子 格式:E:first-child{属性:值;};*/</span>`
+
+`<span class="lake-fontsize-1515">.box ul li:first-child{color:#f00;width:100px;</span>`
+
+`<span class="lake-fontsize-1515">height:30px;Line-height:30px;border:1px solid #000;}</span>`
+
+`<span class="lake-fontsize-1515"></style></span>`
+
+`<span class="lake-fontsize-1515"></head></span>`
+
+`<span class="lake-fontsize-1515"><body></span>`
+
+`<span class="lake-fontsize-1515"><div class-"box"></span>`
+
+`<span class="lake-fontsize-1515"><ul></span>`
+
+`<span class="lake-fontsize-1515"><li></span>``<span class="lake-fontsize-1515">黑马程序员1<li></span>`
+
+ **2** **.E;last-child  ****匹配最后一个孩子**
+
+`<span class="lake-fontsize-1515">/*</span>``<span class="lake-fontsize-1515">匹配最后一个孩子：E;last-child{属性：值；}；*/</span>`
+
+`<span class="lake-fontsize-1515">.box ul li:last-child{color:#f00;width:100px;height:30px;</span>`
+
+`<span class="lake-fontsize-1515">Line-height:30px;border:1px solid #000;}</span>`
+
+ **3** **.E:nth-child(n)  ****匹配第 n 个孩子**
+
+`<span class="lake-fontsize-1515">/*</span>``<span class="lake-fontsize-1515">匹配第n个孩子：E:nth-child(n){属性：值；}；*/</span>`
+
+`<span class="lake-fontsize-1515">.box ul li:nth-child(</span>``<span class="lake-fontsize-1515">随意输入一个数){color:pink;width:100px;</span>`
+
+`<span class="lake-fontsize-1515">height:30px;Line-height:40px;border:1px solid skyblue;}</span>`
+
+ **4**  **.E:nth-child(2n)** **或E:nth-child(even)  匹配偶数的孩子**
+
+`<span class="lake-fontsize-1515">/*</span>``<span class="lake-fontsize-1515">匹配偶数的孩子：E:nth-child(n){属性：值；}或者：nth-child(even){属性：值；}*/</span>`
+
+`<span class="lake-fontsize-1515">.box ul li:nth-child(2){color:00f;background:pink;</span>`
+
+`<span class="lake-fontsize-1515">Width:100px;}*/</span>`
+
+`<span class="lake-fontsize-1515">.box ul li:nth-child(even){color:f00;background:pink;</span>`
+
+`<span class="lake-fontsize-1515">Width:100px;}*/</span>`
+
+ **5**  **.E:nth-child(2+1n)** **或E:nth-child(odd)  匹配偶数的孩子**
+
+`<span class="lake-fontsize-1515">/*</span>``<span class="lake-fontsize-1515">匹配奇数的孩子：E:nth-child(2n+1){属性：值；}或者：nth-child(odd){属性：值；}*/</span>`
+
+`<span class="lake-fontsize-1515">.box ul li:nth-child(2n+){color:0f0;Width:100px;</span>`
+
+`<span class="lake-fontsize-1515">Background-color</span>``<span class="lake-fontsize-1515">：skyblue；}*/</span>`
+
+`<span class="lake-fontsize-1515">.box ul li:nth-child(odd){color:gold;Width:100px;</span>`
+
+`<span class="lake-fontsize-1515">Background-color</span>``<span class="lake-fontsize-1515">：skyblue；}*/</span>`
+
+`<span class="lake-fontsize-1515">6</span>``<span class="lake-fontsize-1515">.E:only-child  </span>``<span class="lake-fontsize-1515">匹配有且只有一个孩子</span>`
+
+`<span class="lake-fontsize-1515">/*</span>``<span class="lake-fontsize-1515">匹配有且只有一个孩子:E:only-child{属性：值；}*/</span>`
+
+`<span class="lake-fontsize-1515">Dix u1 li:only-child{color:#f00;}</span>`
+
+# 32Border-collapse
+
+内容介绍
+
+**一、border-collapse 简介**
+
+**这个属性主要是用于来合并边框线 其值为：collapse**
+
+**border-collapse : collapse;**
+
+内容介绍
+
+# 33伪元素
+
+**选择器                功能**
+
+**:first-letter        ** **操作当前元素中第一个字**
+
+**:first-line          ** **操作当前元素中第一行**
+
+**:beforerw            ** **在之前插入，在一一个盒子内部的最前面**
+
+**:afterp              ** **在之后插入，在一个盒子内部的最后面**
+
+`<span class="lake-fontsize-1515">/*.box:first-letter</span>`
+
+`<span class="lake-fontsize-1515">如：操作当前元素中的第一个字<span> </span></span>`
+
+`<span class="lake-fontsize-1515">color:#f00;<br/>font-size:40px;padding:20px;}*/</span>`
+
+`<span class="lake-fontsize-1515">.box:first-line{color:#9F79EE;}</span>`
+
+`<span class="lake-fontsize-1515">.box::before{/*</span>``<span class="lake-fontsize-1515">如：要在当前元素的最前面插入文字必须将文字放上在content中*/Content：如“黑马程序员”;</span>`
+
+`<span class="lake-fontsize-1515">.box::after/*</span>``<span class="lake-fontsize-1515">要在当前元素的最后面插入文字*/ content: 如"hello";}</span>`
+
+# 34阴影
+
+内容介绍
+
+**一、**text-shadow
+
+---
+
+### 一、文本阴影text-shadow
+
+**text-shadow:**水平阴影 垂直阴影 模糊距离 阴影颜色。
+
+**注释: text-shadow 属性向文本添加一个或多个阴影。该属性是逗号分隔的阴影列表，每个阴影有两个或三个长度值和一个可选的颜色值进行规定。省略的长度是0。**
+
+**描述:**
+
+**●**文字阴影可以有多组值，多组之间用逗号隔开就可以。
+
+**●**水平阴影正值阴影在右边，负值在左边。
+
+**●**垂直阴影正值在下边，负值在上边。
+
+**●模糊强度，值越大越模糊。**
+
+---
+
+### 二、盒子阴影
+
+Box-shadow
+
+**水平方向阴影、垂直方向阴影、模糊距离、阴影尺寸、阴影颜色、内/外阴影。**
+
+`<span class="lake-fontsize-1515"><title></span>``<span class="lake-fontsize-1515">盒子阴影</title><br/><style type="text/css")<br/>.boxf<br/>width:100px;height:100px;</span>`
+
+`<span class="lake-fontsize-1515">border:1px solid#000;/*</span>``<span class="lake-fontsize-1515">给这个盒子设置阴影</span>`语法格式:
+box-shadow:  水平方向的阴影 垂直方向的阴影 阴影的清晰度 阴影的大小 阴影的颜色 阴影的位置
+
+`<span class="lake-fontsize-1515">inset outset (</span>``<span class="lake-fontsize-1515" data-spm-anchor-id="a2c6h.21258798.0.i20.21755a72d4MFML">默认值);*/box-shadow:3px 3px 3px 3px #f00;}</span>`
+
+`<span class="lake-fontsize-1515"></style></head></boby></div class=”box”></div></span>`
+
+**1.**盒子阴影可以有多组值，多组之间用逗号隔开。
+
+**2.**水平阴影正值阴影在右边，负值在左边。
+
+**3.**垂直阴影正值在下边，负值在上边。
+
+**4.**模糊尺寸，值越大越模糊。
+
+`<span class="lake-fontsize-1515">Box-shadow:(</span>``<span class="lake-fontsize-1515">两组阴影)3px 3px 3px 3px #f00,-4px -4px 2px 2px #DA70D6（颜色）0 inset;}</span>`
+
+---
+
+### 三、图片阴影
+
+`<span class="lake-fontsize-1515"><title></span>` `<span class="lake-fontsize-1515">给图片设置阴影 </title><br/><style type="text/css"><br/>img{box-shadow: 2px 2px 2px 2px #FFA07A(颜色）；}<br/></style></head><body><br/><img src="./images/1.jpg（图片）"></body></html></span>
+`
+
+# 35圆角矩形
+
+### 圆角矩形
+
+
+---
+
+### 一、Border-radius
+
+`<span class="lake-fontsize-1515">Border-radius</span>``<span class="lake-fontsize-1515">：左上 右上 右下 左下</span>`
+
+`<span class="lake-fontsize-1515">< !DOCTYPE html></span>`
+
+`<span class="lake-fontsize-1515"><html lang="en"></span>`
+
+`<span class="lake-fontsize-1515"><head></span>`
+
+`<span class="lake-fontsize-1515"><meta charset="UTF-8"></span>`
+
+`<span class="lake-fontsize-1515"><title></span>``<span class="lake-fontsize-1515">圆角矩形</title></span>`
+
+`<span class="lake-fontsize-1515"><style type="text/css"></span>`
+
+`<span class="lake-fontsize-1515">div{</span>`
+
+`<span class="lake-fontsize-1515">width: 100px;</span>`
+
+`<span class="lake-fontsize-1515">height:100px ;</span>`
+
+`<span class="lake-fontsize-1515">border:1px solid #f00 ;</span>`
+
+`<span class="lake-fontsize-1515">}</span>`
+
+`<span class="lake-fontsize-1515">/*</span>``<span class="lake-fontsize-1515">使用结构伪类选择器来匹配元素*/</span>`
+
+`<span class="lake-fontsize-1515">div :nth-child(1){</span>`
+
+`<span class="lake-fontsize-1515">/*border-radius:</span>``<span class="lake-fontsize-1515">左上 右上 右下 左下; */</span>`
+
+`<span class="lake-fontsize-1515">border-radius: 10px 20px 30px 40px;</span>`
+
+`<span class="lake-fontsize-1515">}</span>`
+
+`<span class="lake-fontsize-1515"></style></span>`
+
+`<span class="lake-fontsize-1515"></head></span>`
+
+`<span class="lake-fontsize-1515">< body></span>`
+
+`<span class="lake-fontsize-1515"><div></div></span>`
+
+**如果说 border-radius 的四个值都是一样的话就可以只需要写一个参数就可以.**
+
+# 36透明度
+
+内容介绍
+
+**一、透明度**
+
+---
+
+### 一、透明度
+
+**CSS** **透明度**
+
+**只要是颜色，都可以用透明度**
+
+**Rgba**（红色，绿色，蓝色，透明度）
+
+**a**：表示透明度的意思  透明度取值：0~1之间  0表示完全透明  1表示不透明
+
+**·背景颜色透明**
+
+`<span class="lake-fontsize-1515">Background-color:rgba(255,255,255,0.3)</span>`
+
+**·文件颜色透明**
+
+`<span class="lake-fontsize-1515">Coler:rgba(255,255,255,0.3)</span>`
+
+**·边框颜色透明**
+
+`<span class="lake-fontsize-1515">Border:1px soild rgba(255,255,255,0.5)</span>`
+
+`<span class="lake-fontsize-1515"><!DOCTYPE html></span>`
+
+`<span class="lake-fontsize-1515"><html lang=”en”></span>`
+
+`<span class="lake-fontsize-1515"><head></span>`
+
+`<span class="lake-fontsize-1515"><meta charset=”UTF-8”></span>`
+
+`<span class="lake-fontsize-1515"><title></span>``<span class="lake-fontsize-1515">背景颜色透明度</title></span>`
+
+`<span class="lake-fontsize-1515"><style type=”text/css”>ground</span>`
+
+`<span class="lake-fontsize-1515">{</span>`
+
+`<span class="lake-fontsize-1515">Margin:0;</span>`
+
+`<span class="lake-fontsize-1515">Padding:0;</span>`
+
+`<span class="lake-fontsize-1515">}</span>`
+
+`<span class="lake-fontsize-1515">.boxx{</span>`
+
+`<span class="lake-fontsize-1515">Width:100px;</span>`
+
+`<span class="lake-fontsize-1515">Height:100px;</span>`
+
+`<span class="lake-fontsize-1515">Background:rgb(255,0,0,0.5);</span>`
+
+`<span class="lake-fontsize-1515">Position:fixed;</span>`
+
+`<span class="lake-fontsize-1515">}</span>`
+
+`<span class="lake-fontsize-1515"></style></span>`
+
+`<span class="lake-fontsize-1515"></head></span>`
+
+`<span class="lake-fontsize-1515"><body></span>`
+
+`<span class="lake-fontsize-1515"><div class=”bos”></div></span>`
+
+`<span class="lake-fontsize-1515"></body></span>`
+
+`<span class="lake-fontsize-1515"></html></span>`
+
+**例2**
+
+`<span class="lake-fontsize-1515"><!DOCTYPE html></span>`
+
+`<span class="lake-fontsize-1515"><html lang="en"></span>`
+
+`<span class="lake-fontsize-1515"><head></span>`
+
+`<span class="lake-fontsize-1515"><meta charset="UTF-8"></span>`
+
+`<span class="lake-fontsize-1515"><title></span>``<span class="lake-fontsize-1515">文本颜色设置透明度</title></span>`
+
+`<span class="lake-fontsize-1515"><style type="text/css"></span>`
+
+`<span class="lake-fontsize-1515">.box{</span>`
+
+`<span class="lake-fontsize-1515">width:100px;</span>`
+
+`<span class="lake-fontsize-1515">height:100px;</span>`
+
+`<span class="lake-fontsize-1515">color:rgba(255,0,0,0.3);</span>`
+
+`<span class="lake-fontsize-1515">border:10px solid rgba(0,0,0,0.4);</span>`
+
+`<span class="lake-fontsize-1515">}</span>`
+
+`<span class="lake-fontsize-1515"></style></span>`
+
+`<span class="lake-fontsize-1515"></head></span>`
+
+`<span class="lake-fontsize-1515"><body></span>`
+
+`<span class="lake-fontsize-1515"><div class="box"></span>``<span class="lake-fontsize-1515">文本颜色设置透明度</div></span>`
